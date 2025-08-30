@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #ffffff;
+  background-color: #0a0a0a;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fondo animado con partículas flotantes */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 80%, rgba(74, 144, 226, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(139, 69, 196, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(29, 78, 216, 0.1) 0%, transparent 50%);
+  animation: backgroundMove 20s ease-in-out infinite;
+  z-index: -2;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(139, 69, 196, 0.2) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(74, 144, 226, 0.2) 1px, transparent 1px);
+  background-size: 60px 60px, 40px 40px;
+  animation: particles 30s linear infinite;
+  z-index: -1;
+}
+
+@keyframes backgroundMove {
+  0%, 100% {
+    background: radial-gradient(circle at 20% 80%, rgba(74, 144, 226, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 69, 196, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(29, 78, 216, 0.1) 0%, transparent 50%);
+  }
+  50% {
+    background: radial-gradient(circle at 80% 20%, rgba(139, 69, 196, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(74, 144, 226, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 60% 60%, rgba(29, 78, 216, 0.15) 0%, transparent 50%);
+  }
+}
+
+@keyframes particles {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  100% {
+    transform: translateY(-100px) translateX(50px);
+  }
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
