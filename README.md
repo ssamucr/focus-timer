@@ -2,6 +2,8 @@
 
 Una aplicación de temporizador minimalista y elegante construida con React y Vite.
 
+**Demo:** <https://focus-timer-peach-nine.vercel.app>
+
 ## Características
 
 - ⏱️ **Temporizador personalizable**: Establece horas, minutos y segundos
